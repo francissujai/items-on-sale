@@ -959,7 +959,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user_id\": 1,\n    \"products\": [\n        {\n            \"product_id\": 2\n        },\n        {\n            \"product_id\": 6\n        }\n    ]\n}",
+					"raw": "{\n    \"user_id\": 1,\n    \"products\": [\n        {\n            \"id\": 2\n        },\n        {\n            \"id\": 6\n        }\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"

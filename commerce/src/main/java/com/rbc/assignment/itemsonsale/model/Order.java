@@ -3,7 +3,9 @@ package com.rbc.assignment.itemsonsale.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "orders")
@@ -16,8 +18,16 @@ public class Order {
     @JoinColumn (name = "user_id")
     private User user;
 
-    @OneToMany (mappedBy = "product")
-    private List<Product> products = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "orders_products",
+            joinColumns = {
+                    @JoinColumn(name = "order_id", referencedColumnName = "id",
+                            nullable = false, updatable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "product_id", referencedColumnName = "id",
+                            nullable = false, updatable = false)})
+    private Set<Product> products = new HashSet<>();
+
 
     public int getId() {
         return id;
@@ -35,11 +45,11 @@ public class Order {
         this.user = user;
     }
 
-    public List<Product> getProducts() {
+    public Set<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(Set<Product> products) {
         this.products = products;
     }
 }

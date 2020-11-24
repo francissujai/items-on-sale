@@ -45,7 +45,7 @@ public class RecommendationService {
     List<Order> ordersForGivenUser = orderDao.findOrdersByUserId(userId);
     // Step 2 : Iterate through the list of orders and get the ratings for the products
     for (Order order : ordersForGivenUser) {
-      List<Product> productsInThisOrder = order.getProducts();
+      Set<Product> productsInThisOrder = order.getProducts();
       // Add all the products to a list.
       for (Product product : productsInThisOrder) {
         productRating.add(product);

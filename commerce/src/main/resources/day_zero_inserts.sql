@@ -19,17 +19,17 @@ VALUES
 	(3, 'All kitchen appliances including cookwares.', 'Kitchen Aplicances');
 
 
-INSERT INTO `products` (`id`, `category_id`, `description`, `item_on_sale`, `last_updated`, `name`, `num_of_reviews`, `rating`, `product_id`)
+INSERT INTO `products` (`id`, `category_id`, `description`, `item_on_sale`, `last_updated`, `name`, `num_of_reviews`, `rating`)
 VALUES
-	(1, 1, '75inch UHD Smart TV', 1, '2020-11-24 02:59:02', 'LG Smart', 10, 4.119999999999999, NULL),
-	(2, 1, '55inch QLED TV', NULL, '2020-11-24 02:56:48', 'Sony Bravia', 10, 4.02, NULL),
-	(3, 1, '13.3 Inch Macbook Pro', NULL, '2020-11-24 02:56:48', 'APple Macbook', 10, 3.5, NULL),
-	(4, 2, 'Sweat shirt', NULL, '2020-11-24 02:56:48', 'Nike', 10, 3.8, NULL),
-	(5, 2, 'Running shorts', NULL, '2020-11-24 02:56:48', 'Reebok', 10, 4.2, NULL),
-	(6, 2, 'Running shoes', 1, '2020-11-24 02:59:35', 'New Balance', 10, 4.7, NULL),
-	(7, 3, 'Samsung food processor', NULL, '2020-11-24 02:56:48', 'Samsung', 10, 3.5, NULL),
-	(8, 3, 'Microwave Owen', 1, '2020-11-24 02:59:54', 'Kitchenaid', 10, 4.5, NULL),
-	(9, 3, 'Egg Beater', NULL, '2020-11-24 02:56:48', 'Panasonic', 10, 4.4, NULL);
+	(1, 1, '75inch UHD Smart TV', 1, '2020-11-24 02:59:02', 'LG Smart', 10, 4.119999999999999),
+	(2, 1, '55inch QLED TV', NULL, '2020-11-24 02:56:48', 'Sony Bravia', 10, 4.02),
+	(3, 1, '13.3 Inch Macbook Pro', NULL, '2020-11-24 02:56:48', 'APple Macbook', 10, 3.5),
+	(4, 2, 'Sweat shirt', NULL, '2020-11-24 02:56:48', 'Nike', 10, 3.8),
+	(5, 2, 'Running shorts', NULL, '2020-11-24 02:56:48', 'Reebok', 10, 4.2),
+	(6, 2, 'Running shoes', 1, '2020-11-24 02:59:35', 'New Balance', 10, 4.7),
+	(7, 3, 'Samsung food processor', NULL, '2020-11-24 02:56:48', 'Samsung', 10, 3.5),
+	(8, 3, 'Microwave Owen', 1, '2020-11-24 02:59:54', 'Kitchenaid', 10, 4.5),
+	(9, 3, 'Egg Beater', NULL, '2020-11-24 02:56:48', 'Panasonic', 10, 4.4);
 
 
 

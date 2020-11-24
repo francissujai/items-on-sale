@@ -1,7 +1,11 @@
 package com.rbc.assignment.itemsonsale.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -12,9 +16,9 @@ public class Product implements Comparable {
 
     private int category_id;
 
-    @ManyToOne (cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @ManyToMany(mappedBy = "products", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<Order> orders = new HashSet<>();
 
     private String name;
 
@@ -92,14 +96,13 @@ public class Product implements Comparable {
         this.num_of_reviews = num_of_reviews;
     }
 
-    public Product getProduct() {
-        return product;
+    public Set<Order> getOrders() {
+        return orders;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
-
 
     @Override
     public int compareTo(Object product) {
