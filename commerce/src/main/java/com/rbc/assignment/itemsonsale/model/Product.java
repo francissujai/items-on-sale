@@ -103,6 +103,6 @@ public class Product implements Comparable {
 
     @Override
     public int compareTo(Object product) {
-        return (int) (this.rating - ((Product) product).rating);
+        return (int) (((this.rating != null) ? this.rating : 0) - ((((Product) product).rating) != null ? ((Product) product).rating : 0));
     }
 }

@@ -2,6 +2,7 @@ package com.rbc.assignment.itemsonsale.service;
 
 import com.rbc.assignment.itemsonsale.dao.ProductDao;
 import com.rbc.assignment.itemsonsale.dao.ProductRatingDao;
+import com.rbc.assignment.itemsonsale.exception.ProductAlreadyRatedException;
 import com.rbc.assignment.itemsonsale.model.Product;
 import com.rbc.assignment.itemsonsale.model.ProductRating;
 import com.rbc.assignment.itemsonsale.response.ProductRatingResponse;
@@ -28,9 +29,9 @@ public class ProductRatingService {
     // Step 1
     // We are invoking the DAO layer to see whether this user has already rated this product or not.
     ProductRating existingProductRating = productRatingDao.findProductRatingForUser(productRating.getUser_id(), productRating.getProduct_id());
-//    if (existingProductRating != null) {
-//      throw new ProductAlreadyRatedException("User has already Rated this product.");
-//    }
+    if (existingProductRating != null) {
+      throw new ProductAlreadyRatedException("User has already Rated this product.");
+    }
 
     // Step 2
     // We are invoking the DAO layer to add the rating for this product by this user.
